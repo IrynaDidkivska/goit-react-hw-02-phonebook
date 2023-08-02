@@ -1,9 +1,10 @@
 import React from 'react';
 import { Button, Form, Input } from './ContactForm.styled';
 import { nanoid } from 'nanoid';
+import PropTypes from 'prop-types';
 
 export class ContactForm extends React.Component {
-  state = { name: '', number: '', contacts: [] };
+  state = { name: '', number: '' };
 
   // вводимо в інпут
   hendleAddInput = e => {
@@ -62,3 +63,7 @@ export class ContactForm extends React.Component {
     );
   }
 }
+
+ContactForm.propTypes = {
+  newContact: PropTypes.func.isRequired,
+};
