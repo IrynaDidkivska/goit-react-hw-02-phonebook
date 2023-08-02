@@ -1,4 +1,5 @@
 import { nanoid } from 'nanoid';
+import Notiflix from 'notiflix';
 import React from 'react';
 import { ContactList } from './ContactsList/ContactList';
 import { ContactForm } from './ContactsForm/ContactForm';
@@ -23,7 +24,7 @@ export class App extends React.Component {
       contact => contact.name === newContact.name
     );
     checkContact
-      ? alert(`${newContact.name} is already in contact`)
+      ? Notiflix.Notify.failure(`${newContact.name} is already in contact`)
       : this.setState(prev => ({
           contacts: [...prev.contacts, newContact],
         }));
@@ -51,11 +52,13 @@ export class App extends React.Component {
     );
   };
   //видаляємо
-  hendleDeleteContact = id => {
+  hendleDeleteContact = (id, name) => {
     this.setState(prev => ({
       contacts: prev.contacts.filter(contact => contact.id !== id),
     }));
-    console.log('Delete me');
+    Notiflix.Notify.success(
+      `${name} was successfully deleted from your Phonebook`
+    );
   };
   render() {
     const { filter } = this.state;

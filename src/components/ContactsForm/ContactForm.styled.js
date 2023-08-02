@@ -13,7 +13,6 @@ export const Input = styled.input`
   padding: 5px;
 `;
 export const Button = styled.button`
-  max-width: 100px;
   margin: 0 auto;
   padding: 10px;
   cursor: pointer;

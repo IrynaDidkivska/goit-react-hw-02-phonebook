@@ -40,6 +40,7 @@ export class ContactForm extends React.Component {
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
             onChange={this.hendleAddInput}
+            placeholder="Name Surname"
           />
         </label>
         <label htmlFor="name">
@@ -53,6 +54,7 @@ export class ContactForm extends React.Component {
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
             onChange={this.hendleAddInput}
+            placeholder="Phone Number"
           />
         </label>
         <Button>Add contact</Button>
